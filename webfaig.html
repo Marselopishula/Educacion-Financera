@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes Financeres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .info-box {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .form-container input, .form-container textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .help {
+            margin-top: 20px;
+        }
+        .help h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .btn-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .contact-emails {
+            margin-top: 50px;
+        }
+        .contact-emails h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .contact-emails p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info-box">
+            <h1>Benvingut a les Classes Financeres per a Joves</h1>
+        </div>
+        <button class="btn" onclick="showInfo()">Més Informació</button>
+        <p></p>
+        <p>
+        <div class="form-container">
+            <h2>Reservar Classe</h2>
+            <div class="btn-container">
+                <button class="btn" onclick="showForm('form-presencial')">Presencial</button>
+                <button class="btn" onclick="showForm('form-en-linea')">En línia</button>
+            </div>
+            <form id="form-presencial" style="display: none;">
+                <label for="escuela">Nom de l'Escola:</label>
+                <input type="text" id="escuela" name="escuela" required>
+                <label for="contacto">Nom del Contacte:</label>
+                <input type="text" id="contacto" name="contacte" required>
+                <label for="email">Correu Electrònic:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="telefono">Telèfon:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                <label for="mensaje">Missatge Addicional:</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+                <input type="submit" value="Enviar Inscripció">
+            </form>
+            <form id="form-en-linea" style="display: none;">
+                <label for="escuela">Nom de l'Escola:</label>
+                <input type="text" id="escuela" name="escuela" required>
+                <label for="contacto">Nom del Contacte:</label>
+                <input type="text" id="contacto" name="contacte" required>
+                <label for="email">Correu Electrònic:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="telefono">Telèfon:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                <label for="mensaje">Missatge Addicional:</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+                <input type="submit" value="Enviar Inscripció">
+            </form>
+        </div>
+        <div class="help">
+            <h3>Com Reservar:</h3>
+            <p>Per reservar una classe, omple el formulari de reserva amb la informació requerida i prem "Enviar Inscripció".</p>
+        </div>
+        <div class="btn-container">
+            <a href="#contact-emails" class="btn">Contacta'ns</a>
+        </div>
+        <div class="contact-emails" id="contact-emails">
+            <h2>Correus Electrònics de Contacte:</h2>
+            <p>marcos.garcia@reus.lasalle.cat</p>
+            <p>bruno.vines@reus.lasalle.cat</p>
+        </div>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            document.getElementById('form-presencial').style.display = 'none';
+            document.getElementById('form-en-linea').style.display = 'none';
+            document.getElementById(formId).style.display = 'block';
+        }
+
+        function showInfo() {
+            alert("Ensenyem als joves sobre la independència financera a través de classes dinàmiques i pràctiques. El nostre projecte tracta de donar educació financera perquè en un futur, els joves puguin tenir una independència econòmica i tranquil·litat a l'hora de gestionar la seva economia.");
+        }
+    </script>
+</body>
+</html>
